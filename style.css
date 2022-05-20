@@ -1,0 +1,174 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(233, 47%, 7%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lexend Deca";
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.main-container {
+  margin: 4rem;
+  /* padding-top: 10rem; */
+  display: flex;
+}
+
+.the-content {
+  padding: 4rem;
+  padding-bottom: 3rem;
+  background: hsl(244, 38%, 16%);
+  width: 50%;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.top-content h1,
+h2 {
+  padding-bottom: 1.5rem;
+  color: hsl(0, 0%, 100%);
+}
+
+p {
+  padding-bottom: 1.5rem;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+#emphasized {
+  color: hsl(277, 64%, 61%);
+}
+
+#lower-content {
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+}
+
+#companies,
+#templates,
+#queries {
+  flex: 1;
+}
+
+.number {
+  padding-bottom: 0.3rem;
+}
+
+#the-img {
+  width: 50%;
+  background-image: linear-gradient( hsl(278, 100%, 35%,0.5),hsl(278, 100%, 35%,0.5) ) , url(./images/image-header-mobile.jpg);
+  border-radius:0 2rem 2rem 0;
+}
+
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+  so that all the site content will be centered without being affected by the attribute 
+  position: absolute;
+  bottom: 2rem;
+} */
+
+/* .attribution a {
+  color: hsl(228, 45%, 44%);
+  color: hsl(277, 64%, 61%);
+} */
+
+/* 500px  */
+@media only screen and (max-width: 550px) {
+  /* body {
+    padding: 10rem 2.5rem;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .main-container {
+    flex-direction: column-reverse;
+  }
+
+  .the-content {
+    padding-bottom: 1rem;
+    width: 100%;
+    
+  border-radius:0 0 2rem 2rem;
+  }
+
+  #the-img {
+    width: 100%;
+    height: 30vh;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  #lower-content {
+    padding-top: 2.5rem;
+    padding-bottom: 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media only screen and (min-width: 551px) and (max-width: 1024px) {
+  /* #lower-content {
+    padding-top: 2.5rem;
+    padding-bottom: 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }*/
+
+  body {
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  /* .main-container {
+    flex-direction: row-reverse;
+    margin: 0;
+    background-color: red;
+  } */
+
+  .the-content {
+    padding-bottom: 1rem;
+    padding: 1.5rem 2.5rem;
+    flex: 1;
+  }
+
+  #the-img {
+    flex: 1;
+  }
+
+  #lower-content {
+    padding-top: 2.5rem;
+    padding-bottom: 0rem;
+    padding-left: 1rem;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+  }
+}
+
+
+
+
