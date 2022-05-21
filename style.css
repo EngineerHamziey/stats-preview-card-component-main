@@ -39,7 +39,7 @@ h2 {
   color: hsl(0, 0%, 100%);
 }
 
-p {
+.top-content p {
   padding-bottom: 1.5rem;
   color: hsla(0, 0%, 100%, 0.75);
 }
@@ -86,7 +86,9 @@ p {
   }
 
   .the-content {
-    padding-bottom: 1rem;
+    padding: 3rem 1.5rem 1rem 1.5rem;
+    /* padding: 2rem 1.5rem;
+    padding-bottom: 1rem; */
     width: 100%;
     border-radius:0 0 2rem 2rem;
     flex: unset;
@@ -101,7 +103,7 @@ p {
 
   #lower-content {
     padding-top: 2.5rem;
-    padding-bottom: 0rem;
+    padding-bottom: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
