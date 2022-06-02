@@ -2,58 +2,83 @@
 <html lang="en">
 
 <head>
+  <!-- always set your charset to UTF-8 first after the head tag  -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  -->
+  <meta name="description"
+    content="This is Engineer Hamzieys Solution To Frontend Mentor stats preview card component challenge">
+  <!--  -->
+  <meta name="Keywords" content="EngineerHamziey, Frontend Web Developer">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
 
-  <title>Frontend Mentor | Stats preview card component</title>
-
+  <title>EngineerHamziey| Stats preview card component | Frontend Mentor </title>
 </head>
 
 <body>
+  <!-- yh, main is the landmark for the main content and always put your attribution in the footer landmark -->
   <main class="main-container">
     <div class="the-content">
       <div class="top-content">
-        <h1>Get <span id="emphasized">insights</span> that help your business grow.</h1>
+        <h1>Get <span class="emphasized">insights</span> that help your business grow.</h1>
         <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and
           overall efficiency</p>
       </div>
-      <div id="lower-content">
-        <div id="companies">
-          <h2 class="number">
+      <div class="lower-content">
+        <div class="companies">
+          <!-- we don't need to use heading here since this ain't a title, it's just a big text
+          we can use the strong tag <strong> or p, then we style it with our CSS -->
+          <p class="number">
             10k+
-          </h2>
+          </p>
           <p class="rating">
-            COMPANIES
+            <!--
+              let's write this as small letter first, then
+              use our CSS to turn it to uppercase so that the screenreaders
+              will read it out as a word and not letter by letter like an abbrevation or something
+            -->
+            companies
           </p>
         </div>
-        <div id="templates">
-          <h2 class="number">
+        <div class="templates">
+          <p class="number">
             314
-          </h2>
+          </p>
           <p class="rating">
-            TEMPLATES
+            templates
           </p>
         </div>
-        <div id="queries">
-          <h2 class="number">
+        <div class="queries">
+          <p class="number">
             12M+
-          </h2>
+          </p>
           <p class="rating">
-            QUERIES
+            queries
           </p>
         </div>
       </div>
 
     </div>
-
-    <div id="the-img">
+    <!-- I want to add the image as background image to this div.the-img  -->
+    <div class="the-img">
     </div>
   </main>
 
+
+  <!-- Always place your attribution in the footer landmark to prevent accessibility issue. -->
+  <footer>
+    <div class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+          href="https://www.linkedin.com/in/hamzat-lawal-a88404239">Lawal Hamat Ademola</a>. <a
+          href="https://github.com/EngineerHamziey/stats-preview-card-component-main.git">Code Link</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

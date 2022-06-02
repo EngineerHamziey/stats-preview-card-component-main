@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
+
+/* Storing some properties like colour in a variable is a good idea and makes
+your work fast, you can easily type in the variable name without trying to remember
+the rgb or hex value of the color 
+the :root is the best place to declare the variable to make it global*/
+:root {
+  /* -- */
+}
+
+/* let's remove the default padding and margin for every object on
+the page to ensure that all margin and padding are intentional */
 * {
   margin: 0;
   padding: 0;
@@ -8,139 +19,21 @@
 }
 
 body {
-  background: hsl(233, 47%, 7%);
-  color: #fff;
+  /* 
+    inorder to center the page vertically and horizontally,
+    we need to give the body some height and width. But 
+    giving the body an exact width and height for body is bad
+    so min-height and min-width is the best option so that the
+    page(body) can expand when needed.
+    */
+  min-height: 100vh;
+  min-width: 100vw;
+  /* then we can now center it with flexbox */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-family: "Lexend Deca";
-  padding: 6rem 2rem;
+  /* padding: 2rem; */
 }
-
-.main-container {
-  margin: 4rem;
-  display: flex;
-}
-
-.the-content {
-  padding: 4rem;
-  padding-bottom: 3rem;
-  background: hsl(244, 38%, 16%);
-  width: 50%;
-  border-radius: 2rem 0 0 2rem;
-  flex: 1;
-}
-
-.top-content h1,
-h2 {
-  padding-bottom: 1.5rem;
-  color: hsl(0, 0%, 100%);
-}
-
-.top-content p {
-  padding-bottom: 1.5rem;
-  color: hsla(0, 0%, 100%, 0.75);
-}
-
-#emphasized {
-  color: hsl(277, 64%, 61%);
-}
-
-#lower-content {
-  padding-top: 2.5rem;
-  padding-bottom: 0.5rem;
-  display: flex;
-}
-
-#companies,
-#templates,
-#queries {
-  flex: 1;
-  margin: 0.4rem;
-}
-
-.number {
-  padding-bottom: 0.3rem;
-}
-
-#the-img {
-  width: 50%;
-  background-image: linear-gradient( hsl(278, 100%, 35%,0.5),hsl(278, 100%, 35%,0.5) ) , url(./images/image-header-mobile.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius:0 2rem 2rem 0;
-  flex: 1;
-}
-
-/* RESPONSIVENESS */
-@media only screen and (max-width: 900px) {
-  body {
-    padding: 0rem;
-    text-align: center;
-  }
-
-  .main-container {
-    flex-direction: column-reverse;
-  }
-
-  .the-content {
-    padding: 3rem 1.5rem 1rem 1.5rem;
-    /* padding: 2rem 1.5rem;
-    padding-bottom: 1rem; */
-    width: 100%;
-    border-radius:0 0 2rem 2rem;
-    flex: unset;
-  }
-
-  #the-img {
-    width: 100%;
-    height: 20rem;
-    border-radius: 2rem 2rem 0 0;
-    flex: unset;
-  }
-
-  #lower-content {
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-}
-
-@media only screen and (min-width: 901px) and (max-width: 1024px) {
-
-  body {
-    padding: 2.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;
-  }
-
-  .the-content {
-    padding-bottom: 1rem;
-    padding: 1.5rem 2.5rem;
-    flex: 1;
-  }
-
-  #the-img {
-    flex: 1;
-  }
-
-  #lower-content {
-    padding-top: 2.5rem;
-    padding-bottom: 0rem;
-    padding-left: 1rem;
-    align-items: center;
-  }
-}
-
-
-
-
