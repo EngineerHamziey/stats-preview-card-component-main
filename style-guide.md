@@ -15,11 +15,11 @@ The designs were created to the following widths:
 - Dark desaturated blue (card background): hsl(244, 38%, 16%)
 - Soft violet (accent): hsl(277, 64%, 61%)
 
-<!-- ### Neutral
+### Neutral
 
 - White (main heading, stats): hsl(0, 0%, 100%)
 - Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
-- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6) -->
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
 
 ## Typography
 

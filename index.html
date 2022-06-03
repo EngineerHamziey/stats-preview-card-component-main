@@ -15,20 +15,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
 
-  <title>EngineerHamziey| Stats preview card component | Frontend Mentor </title>
+  <title>EngineerHamziey | Stats preview card component | Frontend Mentor </title>
 </head>
 
 <body>
   <!-- yh, main is the landmark for the main content and always put your attribution in the footer landmark -->
   <main class="main-container">
-    <div class="the-content">
-      <div class="top-content">
+    <!--
+      I want to add the image as background image to this div.the-img,
+      the img should  come first since we're using mobile-first approach
+    -->
+    <div class="the-img"></div>
+
+    <div class="typography">
+      <div class="top-text">
         <h1>Get <span class="emphasized">insights</span> that help your business grow.</h1>
-        <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and
-          overall efficiency</p>
+        <p>
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer experience,
+          and
+          overall efficiency
+        </p>
       </div>
-      <div class="lower-content">
-        <div class="companies">
+      <!-- 
+        making this a list item is better to make it semantics
+        cuz if you think of this without styling, it's just a list.
+              -10k+ companies
+              -314 templates
+              -12m+ queries
+       -->
+      <ul class="stats">
+        <li class="companies">
           <!-- we don't need to use heading here since this ain't a title, it's just a big text
           we can use the strong tag <strong> or p, then we style it with our CSS -->
           <p class="number">
@@ -42,29 +58,26 @@
             -->
             companies
           </p>
-        </div>
-        <div class="templates">
+        </li>
+        <li class="templates">
           <p class="number">
             314
           </p>
           <p class="rating">
             templates
           </p>
-        </div>
-        <div class="queries">
+        </li>
+        <li class="queries">
           <p class="number">
             12M+
           </p>
           <p class="rating">
             queries
           </p>
-        </div>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-    </div>
-    <!-- I want to add the image as background image to this div.the-img  -->
-    <div class="the-img">
-    </div>
   </main>
 
 

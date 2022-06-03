@@ -1,13 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
+/* we will be designing for mobile layout first. Mobile-first layout is
+the best, because it often lead to an efficient and shorter code
+and mobile users won't have to process all of the desktop stules. */
+
+
 
 /* Storing some properties like colour in a variable is a good idea and makes
 your work fast, you can easily type in the variable name without trying to remember
-the rgb or hex value of the color 
+the rgb or hex value of the color. It ALso maek it easy to change values of all occurence of the property
 the :root is the best place to declare the variable to make it global*/
 :root {
-  /* -- */
+  /* 
+    the syntax for variable declaration is simple, just start with double dash "--" as shown below, you
+    since the name is more thtan a word, I seperated them with a dash
+  */
+
+  /* main background */
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  /*  card background */
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  /* accent */
+  --Soft-violet: hsl(277, 64%, 61%);
+  /* main heading and stats */
+  --White: hsl(0, 0%, 100%);
+  /* main paragraph */
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  /* stat headings */
+  --Stats-headings: hsla(0, 0%, 100%, 0.6);
+
+  /* I think this ain't given in our code, but I think this
+  color is perfect for the overlay */
+  --overlay: rgba(128, 10, 197, 0.5);
 }
 
 /* let's remove the default padding and margin for every object on
@@ -18,22 +43,174 @@ the page to ensure that all margin and padding are intentional */
   box-sizing: border-box;
 }
 
+/*  */
 body {
   /* 
     inorder to center the page vertically and horizontally,
-    we need to give the body some height and width. But 
-    giving the body an exact width and height for body is bad
-    so min-height and min-width is the best option so that the
-    page(body) can expand when needed.
-    */
+    we will will use flexbox. For that we will need to add min-height 100vh to the body to ensure that it's center horizontally on all devices
+    min-height is the best option so that will grow bigger when needed(i.e responsive).
+  */
+  background: var(--Very-dark-blue);
   min-height: 100vh;
-  min-width: 100vw;
+  /* width: 100vw; */
   /* then we can now center it with flexbox */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* font-size: 1rem; */
+  /* I think using rem instead of px is a good idea for responsiveness */
+  /* converting 15px to rem : 15px/16px = 0.9375rem */
+  font-size: 0.9375rem;
   font-family: "Lexend Deca";
-  /* padding: 2rem; */
+  /* let's put some padding here so that all the content of the whole page won't get cut off by the edge of the browser */
+  padding: 1rem 0.7rem;
+  /* to ensure that what I built as almost pixel perfect as possible:
+    (since the design we are given for PC is of width 1440px according
+     to the style guild)
+    I always start by setting my browser screen-size to 1440px
+    using developer tool or:
+    method 2:
+        Since my PC screen is smailler than 1440px
+        I'll temporarily set the width of my body to 1440px or 375px(width: 1440px or 375px)
+        then I'll open the browser and zoom out until my the scroll-bar 
+        disappears, then I'll remove the width(width: 1440px  or 375px) from the body
+    */
+    /* width: 375px; */
+  /*since every text is align at the center on the mobile design and we're building mobile first,
+  I'll set the text-align property of my body to center intead of doing it for all individually */
+  text-align: center;
 }
+
+.main-container {
+  /* now, here is how you call your variable and auto-completion/auto-suggestion will help you out */
+  background: var(--Dark-desaturated-blue);
+  /* let's put some margin so that the browser is further away from the edge of the browser, i.e so that it won't be too close to the bowser */
+  /* 
+    Template:
+  margin: x-Axis y-Axis; */
+  /* margin here to move the card away fro the edge of the browser and the attribution */
+  margin: 2rem 0.5rem;
+  /* max-width here is extremely important so that the card(main) won't grow too wide on wide screens like tab in this case since this is our mobile version */
+  max-width: 25rem;
+  /* to give it round corner */
+  border-radius: 0.5rem;
+  /* let's set the overflow to hidden so that the image also have the round corner */
+  overflow: hidden;
+  /* width: 375px; */
+}
+
+/* the img */
+.the-img {
+  /* 
+    I don't how to explain these backgroun image in few words, I'll suggest visiting the link below for more explanation
+    for how to add overlay using linear-gradient: https://www.geeksforgeeks.org/css-combine-background-image-with-gradient-overlay/
+    for more on how to use background image: https://www.w3schools.com/cssref/pr_background-image.asp
+  */
+  background: linear-gradient(var(--overlay), var(--overlay)),
+  url(./images/image-header-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 15rem;
+  /* to make the image appear completely
+  img is origi 654 x 480 pixels 654/480 = 1.3625*/
+}
+
+.typography {
+  padding: 1rem;
+}
+
+/* the typography part, haha */
+.top-text {
+  
+}
+
+.top-text h1 {
+  color: var(--White);
+  margin: 1.5rem 1rem; 
+  font-size: 1.8rem;
+}
+
+.emphasized {
+  color: var(--Soft-violet);
+}
+
+.top-text p {
+  color: var(--main-paragraph);
+  margin: 1rem;
+  /* padding: 3rem 2rem 2rem 2rem; */
+}
+
+.stats {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+li {
+  margin: 1.5rem;
+  /* transform the text to uppercase with css, check why in the html */
+  text-transform: uppercase;
+}
+
+.number {
+  color: var(--White);
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0.2rem;
+}
+
+.rating {
+  color: var(--Stats-headings);
+}
+
+
+/* here comes the footer */
+.attribution {
+  margin-bottom: 1.5rem;
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+
+.attribution a {
+  color: var(--Soft-violet);
+}
+
+
+
+
+
+/* 
+    DISCLAIMER:
+      --some of the things I did in this code are due to my personal belive/like
+      like storing those colors in a variable, someone might feel it's not necessary since 
+      this is a small project.
+
+      --some explanation here might look unnecessary but I put it there because I have seen alot of people make those mistakes
+
+
+
+
+
+    RECOMMENDATIONS:
+        -next time try using mobile-first approach, it's makes code shorter and
+        more efficient, also mobile users won't have to process all the desktop styling first.
+
+        --you can skip some explanation if they are things you understand already.
+        
+
+        -I'll do my best to explain as much as possible but try and read more about anything you
+        find confusing here and you can also ask questions.
+
+        -If you don't know much about how to test responsiveness,
+        google "how to test responsiveness using chrome developer tool" 
+
+        -Also most of the times you don't need to set height for
+        things like this. to ensure responsiveness and so that your
+        media qery wont look like rocket science(lol). I mean
+        it will be simple
+
+        -always use rem, em, %, vh and vw for responsiveness, although
+        using vh and vw sometimes might be a bad idea(I think I have seen
+        it in your code somewhere you will see the correction there)
+
+*/
