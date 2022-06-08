@@ -265,6 +265,7 @@ a:focus-visible {
 /*************************************************************************************************************************************
 
 DISCLAIMER:
+
   --some of the things I did(like amount of padding in some places) in this code are due to my personal belive/like
   like storing those colors in a variable, someone might feel it's not necessary since 
   this is a small project.
@@ -278,6 +279,8 @@ DISCLAIMER:
 
 
 RECOMMENDATIONS:
+    --I'm sorry the font-size and the line-height does not match the design, but I liked it that way because I'm a mini PC user
+
     --next time try using mobile-first approach, it's makes code shorter and
     more efficient, also mobile users won't have to process all the desktop styling first.
 
