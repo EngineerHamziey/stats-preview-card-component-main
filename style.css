@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+/************************************************************************************************************************************
+                          PLEASE Check the Important explanation and recommendation starting from about line 250
+**************************************************************************************************************************************/
 
-/*
-  we will be designing for mobile layout first. Mobile-first layout is
-  the best, because it often lead to an efficient and shorter code
-  and mobile users won't have to process all of the desktop stules.
+
+
+/* we will be designing for mobile layout first. Mobile-first layout is the best, because it often lead to an efficient and shorter code
+  and mobile users won't have to process all of the desktop styles.
 */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
 
 /*
@@ -227,16 +231,18 @@ a:focus-visible {
 
     /* unset here cancells out the previous height we set in our mobile version, just like it's name suggest */
     height: unset;
-    min-width: 45%;
+    min-width: 50%;
   }
 
   .typography {
-    /* width: auto; */
     /* adding more space around the texts in general*/
-    padding: 2rem 3rem 2rem 2rem;
+    padding: 2rem;
+    /* I intentionally put this amount of margin to Ensure that the stats/ratings still have a little space between them on small screen of about 
+    769px without additional media query */
   }
 
   .stats {
+    /* making the stats/rating horizontal */
     display: flex;
   }
 
@@ -249,43 +255,46 @@ a:focus-visible {
   }
 
   li {
+    /* adding auto margin to the right of each stat and removing the others */
     margin: 0 auto 0 0;
   }
 }
 
 
 
-/* 
-    DISCLAIMER:
-      --some of the things I did(like amount of padding in some places) in this code are due to my personal belive/like
-      like storing those colors in a variable, someone might feel it's not necessary since 
-      this is a small project.
+/*************************************************************************************************************************************
 
-      --some explanation here might look unnecessary but I put it there because I have seen alot of people make those mistakes
+DISCLAIMER:
+  --some of the things I did(like amount of padding in some places) in this code are due to my personal belive/like
+  like storing those colors in a variable, someone might feel it's not necessary since 
+  this is a small project.
 
-      --I'll try as much as possible to update the code with corrections and more suggestions,
-        but I'll advise that you visit the solution page to see the suggestions and hopefully corrections in the comment section
+  --some explanation here might look unnecessary but I put it there because I have seen alot of people make those mistakes
+
+  --I'll try as much as possible to update the code with corrections and more suggestions,
+    but I'll advise that you visit the solution page to see the suggestions and hopefully corrections in the comment section
 
 
 
 
-    RECOMMENDATIONS:
-        --next time try using mobile-first approach, it's makes code shorter and
-        more efficient, also mobile users won't have to process all the desktop styling first.
+RECOMMENDATIONS:
+    --next time try using mobile-first approach, it's makes code shorter and
+    more efficient, also mobile users won't have to process all the desktop styling first.
 
-        --you can skip some explanation if they are things you understand already.
+    --you can skip some explanation if they are things you understand already.
 
-        --some things(like some margins and paddings) are not explained, because I think what they do is simple.
-        But if you don't get it, feel free to google it, experiment with it by changing the values and ask questions
+    --some things(like some margins and paddings) are not explained, because I think what they do is simple.
+    But if you don't get it, feel free to google it, experiment with it by changing the values and ask questions
 
-        -If you don't know much about how to test responsiveness, google "how to test responsiveness using chrome developer tool" 
+    -If you don't know much about how to test responsiveness, google "how to test responsiveness using chrome developer tool" 
 
-        -Also most of the times you don't need to set height for things like this card to ensure responsiveness and so that your
-        media qery wont look like rocket science(lol). I mean so that it won't be complex.
+    -Also most of the times you don't need to set height for things like this card to ensure responsiveness and so that your
+    media qery wont look like rocket science(lol). I mean so that it won't be complex.
 
-        -always use rem, em, %, vh and vw for responsiveness, although using vh and vw sometimes might be a bad idea.For example, setting the
-        height or width of the a component on the page should not use vh nor vw, because of ultra small screen and ultra wide screen.
-        this might look good on your computer, but remember there are many computers out there width smaller and bigger screen size and it will
-        look good on few BUT BAD ON MOST. As you can see, I used rem for the max-width of the card
+    -always use rem, em, %, vh and vw for responsiveness, although using vh and vw sometimes might be a bad idea.For example, setting the
+    height or width of the a component on the page should not use vh nor vw, because of ultra small screen and ultra wide screen.
+    this might look good on your computer, but remember there are many computers out there width smaller and bigger screen size and it will
+    look good on few BUT BAD ON MOST. As you can see, I used rem for the max-width of the card
 
-*/
+
+****************************************************************************************************************************************/
