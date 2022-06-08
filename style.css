@@ -63,7 +63,7 @@ body {
 
   /* 
     inorder to center the page vertically and horizontally,
-    we will will use flexbox. For that we will need to add min-height 100vh to the body to ensure that it's center horizontally on all devices
+    we will will use flexbox. For that we will need to add min-height 100vh to the body to ensure that it's center vertically on all devices
     min-height is the best option so that will grow bigger when needed(i.e responsive). min-height NOT HEIGHT, using ordinary height, won't 
     allow responsiveness
   */
