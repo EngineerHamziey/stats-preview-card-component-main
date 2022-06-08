@@ -4,12 +4,10 @@
 <head>
   <!-- always set your charset to UTF-8 first after the head tag  -->
   <meta charset="UTF-8">
-  <!-- displays site properly based on user's device -->
+  <!-- displays site properly based on user's device with initial scale of 1(i.e with no zoom in or out) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--  -->
   <meta name="description"
     content="This is Engineer Hamzieys Solution To Frontend Mentor stats preview card component challenge">
-  <!--  -->
   <meta name="Keywords" content="EngineerHamziey, Frontend Web Developer">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -19,7 +17,8 @@
 </head>
 
 <body>
-  <!-- yh, main is the landmark for the main content and always put your attribution in the footer landmark -->
+  <!-- yh, main is the landmark for the main content and always put your attribution in the footer landmark, header is another landmart
+  remember NOT TO PUT ONE LANDMARK IN THE OTHER -->
   <main class="main-container">
     <!--
       I want to add the image as background image to this div.the-img,
@@ -27,6 +26,8 @@
     -->
     <div class="the-img"></div>
 
+    <!-- I'm putting the text in  this div.typography -->
+    <!-- in general, I grouped the texts in containers so that I can position them together -->
     <div class="typography">
       <div class="top-text">
         <h1>Get <span class="emphasized">insights</span> that help your business grow.</h1>
@@ -44,7 +45,7 @@
               -12m+ queries
        -->
       <ul class="stats">
-        <li class="companies">
+        <li>
           <!-- we don't need to use heading here since this ain't a title, it's just a big text
           we can use the strong tag <strong> or p, then we style it with our CSS -->
           <p class="number">
@@ -59,7 +60,7 @@
             companies
           </p>
         </li>
-        <li class="templates">
+        <li>
           <p class="number">
             314
           </p>
@@ -67,7 +68,7 @@
             templates
           </p>
         </li>
-        <li class="queries">
+        <li>
           <p class="number">
             12M+
           </p>
@@ -88,7 +89,10 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
           href="https://www.linkedin.com/in/hamzat-lawal-a88404239">Lawal Hamat Ademola</a>. <a
-          href="https://github.com/EngineerHamziey/stats-preview-card-component-main.git">Code Link</a>.
+          href="https://github.com/EngineerHamziey/stats-preview-card-component-main.git">Code Link on github.</a>
+      </p>
+      <p>To see Menthors' feedback on the code,
+        <a href="#">Click here.</a>
       </p>
     </div>
   </footer>

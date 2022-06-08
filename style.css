@@ -1,25 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
-/* we will be designing for mobile layout first. Mobile-first layout is
-the best, because it often lead to an efficient and shorter code
-and mobile users won't have to process all of the desktop stules. */
+/*
+  we will be designing for mobile layout first. Mobile-first layout is
+  the best, because it often lead to an efficient and shorter code
+  and mobile users won't have to process all of the desktop stules.
+*/
 
 
 
-/* Storing some properties like colour in a variable is a good idea and makes
-your work fast, you can easily type in the variable name without trying to remember
-the rgb or hex value of the color. It ALso maek it easy to change values of all occurence of the property
-the :root is the best place to declare the variable to make it global*/
+/*
+  Storing some properties like colour in a variable is a good idea and makes
+  your work fast, you can easily type in the variable name without trying to remember
+  the rgb or hex value of the color. It ALso maek it easy to change values of all occurence of the property
+  the :root is the best place to declare the variable to make it global
+*/
 :root {
   /* 
     the syntax for variable declaration is simple, just start with double dash "--" as shown below, you
-    since the name is more thtan a word, I seperated them with a dash
+    since the name is more thtan a word, I seperated them with a dash, you can use camel case as well
   */
 
-  /* main background */
+  /* main background colour*/
   --Very-dark-blue: hsl(233, 47%, 7%);
-  /*  card background */
+  /*  card background colour*/
   --Dark-desaturated-blue: hsl(244, 38%, 16%);
   /* accent */
   --Soft-violet: hsl(277, 64%, 61%);
@@ -30,7 +33,7 @@ the :root is the best place to declare the variable to make it global*/
   /* stat headings */
   --Stats-headings: hsla(0, 0%, 100%, 0.6);
 
-  /* I think this ain't given in our code, but I think this
+  /* I think this ain't given in the style guild, but I think this
   color is perfect for the overlay */
   --overlay: rgba(128, 10, 197, 0.5);
 }
@@ -43,39 +46,41 @@ the page to ensure that all margin and padding are intentional */
   box-sizing: border-box;
 }
 
-/*  */
+/* Now the journey begins */
 body {
+  /*
+    I feel like increasing the line-height a little bit,
+    --line-height is used to define the minimal height of line boxes within the element. It allows you to set the height of a line
+    independently from the font-size it sets the differences between two lines of your content.It defines the amount of spaces
+    above or below inline elements.
+    --THE DEFAULT IS VALUE IS 1
+  */
+  line-height: 1.2;
+
   /* 
     inorder to center the page vertically and horizontally,
     we will will use flexbox. For that we will need to add min-height 100vh to the body to ensure that it's center horizontally on all devices
-    min-height is the best option so that will grow bigger when needed(i.e responsive).
+    min-height is the best option so that will grow bigger when needed(i.e responsive). min-height NOT HEIGHT, using ordinary height, won't 
+    allow responsiveness
   */
   background: var(--Very-dark-blue);
   min-height: 100vh;
-  /* width: 100vw; */
   /* then we can now center it with flexbox */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* I think using rem instead of px is a good idea for responsiveness */
+  /* using rem instead of px is a good idea for responsiveness */
   /* converting 15px to rem : 15px/16px = 0.9375rem */
   font-size: 0.9375rem;
-  font-family: "Lexend Deca";
+  font-family: "Lexend Deca",sans-serif;
   /* let's put some padding here so that all the content of the whole page won't get cut off by the edge of the browser */
   padding: 1rem 0.7rem;
   /* to ensure that what I built as almost pixel perfect as possible:
     (since the design we are given for PC is of width 1440px according
      to the style guild)
-    I always start by setting my browser screen-size to 1440px
-    using developer tool or:
-    method 2:
-        Since my PC screen is smailler than 1440px
-        I'll temporarily set the width of my body to 1440px or 375px(width: 1440px or 375px)
-        then I'll open the browser and zoom out until my the scroll-bar 
-        disappears, then I'll remove the width(width: 1440px  or 375px) from the body
-    */
-    /* width: 375px; */
+    I always set my browser screen-size to 1440px before comparing the design to know if it's pixel perfect
+    
   /*since every text is align at the center on the mobile design and we're building mobile first,
   I'll set the text-align property of my body to center intead of doing it for all individually */
   text-align: center;
@@ -84,19 +89,16 @@ body {
 .main-container {
   /* now, here is how you call your variable and auto-completion/auto-suggestion will help you out */
   background: var(--Dark-desaturated-blue);
-  /* let's put some margin so that the browser is further away from the edge of the browser, i.e so that it won't be too close to the bowser */
-  /* 
-    Template:
-  margin: x-Axis y-Axis; */
-  /* margin here to move the card away fro the edge of the browser and the attribution */
+  /* let's put some margin so that the card is further away from the edges of the browser, i.e so that it won't be too close to the corner of the browser */
+  /* margin: x-Axis y-Axis; */
   margin: 2rem 0.5rem;
-  /* max-width here is extremely important so that the card(main) won't grow too wide on wide screens like tab in this case since this is our mobile version */
-  max-width: 25rem;
+  /* max-width here is extremely important so that the card(main) won't grow too wide on wide screens like tab in this 
+  case since this is our mobile version and we are not designing for tab and max-width should be placed on the card, not the body*/
+  max-width: 23rem;
   /* to give it round corner */
-  border-radius: 0.5rem;
-  /* let's set the overflow to hidden so that the image also have the round corner */
+  border-radius: 0.9rem;
+  /* let's set the overflow to hidden so that the sharp corner of the image won't pop out of the card */
   overflow: hidden;
-  /* width: 375px; */
 }
 
 /* the img */
@@ -105,28 +107,32 @@ body {
     I don't how to explain these backgroun image in few words, I'll suggest visiting the link below for more explanation
     for how to add overlay using linear-gradient: https://www.geeksforgeeks.org/css-combine-background-image-with-gradient-overlay/
     for more on how to use background image: https://www.w3schools.com/cssref/pr_background-image.asp
+    there are also atleast two other methods out there
   */
   background: linear-gradient(var(--overlay), var(--overlay)),
   url(./images/image-header-mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  /* although all this background... can be done using just a line, but I prefer to show the property name  */
+
+  /* seting the height alone is ok for the mobile version, the width will automatically take up 100% */
   height: 15rem;
-  /* to make the image appear completely
-  img is origi 654 x 480 pixels 654/480 = 1.3625*/
 }
 
 .typography {
+  /*adding padding to the overall text container*/
   padding: 1rem;
 }
 
 /* the typography part, haha */
-.top-text {
+/* .top-text {
   
-}
+} */
 
 .top-text h1 {
   color: var(--White);
-  margin: 1.5rem 1rem; 
+  /* padding: x-axis y-axis; */
+  padding: 1.5rem 1rem; 
   font-size: 1.8rem;
 }
 
@@ -137,7 +143,6 @@ body {
 .top-text p {
   color: var(--main-paragraph);
   margin: 1rem;
-  /* padding: 3rem 2rem 2rem 2rem; */
 }
 
 .stats {
@@ -147,13 +152,19 @@ body {
 
 li {
   margin: 1.5rem;
-  /* transform the text to uppercase with css, check why in the html */
+  /* transform the text to uppercase with css*/
   text-transform: uppercase;
+  /*  
+      let's write this as small letter first, then
+      use our CSS to turn it to uppercase so that the screenreaders
+      will read it out as a word and not letter by letter like an abbrevation or something 
+  */
 }
 
 .number {
   color: var(--White);
-  font-size: 1.6rem;
+  /* setting the font sizes looks like eye/vision test for me, I hope this 1.4rem matches it (lol) */
+  font-size: 1.4rem;
   font-weight: bold;
   margin: 0.2rem;
 }
@@ -166,7 +177,8 @@ li {
 /* here comes the footer */
 .attribution {
   margin-bottom: 1.5rem;
-  font-size: 11px;
+  /* converting the given 11px to rem, 11px/16px = 0.6875rem,  */
+  font-size: 0.6875rem;
   text-align: center;
   color: #fff;
 }
@@ -175,42 +187,105 @@ li {
   color: var(--Soft-violet);
 }
 
+.attribution p:nth-child(2) {
+  margin-top: 0.3rem;
+}
 
+/* 
+  :focus-visible 
+  An outline is a line that is drawn just outside the boder edge of the elements. Outlines are generally used to indicate focus or active states
+  of the elements such as buttons, links, form fields, etc.   
+*/
+a:focus-visible {
+  outline: 0.1rem dotted #f4f4f4;
+}
+
+
+/* Now Let's build the Destop version */
+@media (min-width: 769px) {
+  body {
+    /* let's change the text-align to default which is "start" as in text-align: start; or we can just unset it*/
+    text-align: unset;
+  }
+
+  .main-container {
+    /* the margin is obviously used to make space between the card and edge of the browser esspecial on smaller sceen  */
+    margin: 2rem 1rem;
+    /* arranging the image and the typoraphy side by side, as opposed to the vertical position on mobile version */
+    display: flex;
+    flex-direction: row-reverse;
+    /* giving it a max-width so that it won't too wide on wider screens and it will shrink down when needed(on smaller screens), using width here will cause reponsiveness problem, as it will make
+    make the width fixed(i.e non-reponsive) unlike using max-width. */
+    max-width: 90rem;
+  }
+
+  .the-img {
+    /* let's repeat the same thing as in the mobile background, just changing the image to the desktop background image */
+    background: linear-gradient(var(--overlay), var(--overlay)),
+    url(./images/image-header-desktop.jpg);
+    /* background-size and background-repeat has been set to cover and no-repeat respectively on the mobile version, so no need to repeat that */
+
+    /* unset here cancells out the previous height we set in our mobile version, just like it's name suggest */
+    height: unset;
+    min-width: 45%;
+  }
+
+  .typography {
+    /* width: auto; */
+    /* adding more space around the texts in general*/
+    padding: 2rem 3rem 2rem 2rem;
+  }
+
+  .stats {
+    display: flex;
+  }
+
+  .number {
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    padding: 0 0.5rem 1.5rem 1rem;
+  }
+
+  li {
+    margin: 0 auto 0 0;
+  }
+}
 
 
 
 /* 
     DISCLAIMER:
-      --some of the things I did in this code are due to my personal belive/like
+      --some of the things I did(like amount of padding in some places) in this code are due to my personal belive/like
       like storing those colors in a variable, someone might feel it's not necessary since 
       this is a small project.
 
       --some explanation here might look unnecessary but I put it there because I have seen alot of people make those mistakes
 
+      --I'll try as much as possible to update the code with corrections and more suggestions,
+        but I'll advise that you visit the solution page to see the suggestions and hopefully corrections in the comment section
 
 
 
 
     RECOMMENDATIONS:
-        -next time try using mobile-first approach, it's makes code shorter and
+        --next time try using mobile-first approach, it's makes code shorter and
         more efficient, also mobile users won't have to process all the desktop styling first.
 
         --you can skip some explanation if they are things you understand already.
-        
 
-        -I'll do my best to explain as much as possible but try and read more about anything you
-        find confusing here and you can also ask questions.
+        --some things(like some margins and paddings) are not explained, because I think what they do is simple.
+        But if you don't get it, feel free to google it, experiment with it by changing the values and ask questions
 
-        -If you don't know much about how to test responsiveness,
-        google "how to test responsiveness using chrome developer tool" 
+        -If you don't know much about how to test responsiveness, google "how to test responsiveness using chrome developer tool" 
 
-        -Also most of the times you don't need to set height for
-        things like this. to ensure responsiveness and so that your
-        media qery wont look like rocket science(lol). I mean
-        it will be simple
+        -Also most of the times you don't need to set height for things like this card to ensure responsiveness and so that your
+        media qery wont look like rocket science(lol). I mean so that it won't be complex.
 
-        -always use rem, em, %, vh and vw for responsiveness, although
-        using vh and vw sometimes might be a bad idea(I think I have seen
-        it in your code somewhere you will see the correction there)
+        -always use rem, em, %, vh and vw for responsiveness, although using vh and vw sometimes might be a bad idea.For example, setting the
+        height or width of the a component on the page should not use vh nor vw, because of ultra small screen and ultra wide screen.
+        this might look good on your computer, but remember there are many computers out there width smaller and bigger screen size and it will
+        look good on few BUT BAD ON MOST. As you can see, I used rem for the max-width of the card
 
 */
