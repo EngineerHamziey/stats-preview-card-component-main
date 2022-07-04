@@ -53,13 +53,16 @@ the page to ensure that all margin and padding are intentional */
 /* Now the journey begins */
 body {
   /*
-    I feel like increasing the line-height a little bit,
+    Use a minimum value of 1.5 for line-height for main paragraph content. This will help people experiencing low vision conditions,
+    as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using a unitless value
+    ensures that the line height will scale proportionately.,
     --line-height is used to define the minimal height of line boxes within the element. It allows you to set the height of a line
     independently from the font-size it sets the differences between two lines of your content.It defines the amount of spaces
     above or below inline elements.
     --THE DEFAULT IS VALUE IS 1
+    TO LEARN MORE ABOUT THIS >> https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#accessibility_concerns
   */
-  line-height: 1.2;
+  line-height: 1.5;
 
   background: var(--Very-dark-blue);
   /* 
