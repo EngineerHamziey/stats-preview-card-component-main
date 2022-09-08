@@ -40,8 +40,10 @@ Users should be able to:
 
 
 ### Links
-
-- [Code URL](https://github.com/EngineerHamziey/stats-preview-card-component-main)
+*You can ask questions in the comment section*
+- [Twitter Comment Section](https://twitter.com/EngineerHamziey/status/1568006574467153922?t=r54JWYvAY79tF3BF5MQVWg&s=19)
+- [Linkedln comment Section](https://www.linkedin.com/posts/hamzat-lawal-a88404239_github-engineerhamzieystats-preview-card-component-main-activity-6973774289023963136-X5hk?utm_source=share&utm_medium=member_android)
+- [Code URL GitHub](https://github.com/EngineerHamziey/stats-preview-card-component-main)
 - [Live Site URL](https://hamzat-stats-preview.netlify.app)
 - [Solution Page On Frontend Mentor](https://www.frontendmentor.io/solutions/stats-preview-card-with-full-explanation-using-flexbox-and-mobile-fi-TzujRpTkxz)
 
