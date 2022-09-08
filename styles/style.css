@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
-
-/*
-  Storing some properties like colour in a variable is a good idea and makes
-  your work fast, you can easily type in the variable name without trying to remember
-  the rgb or hex value of the color. It ALso maek it easy to change values of all occurence of the property
-  the :root is the best place to declare the variable to make it global
-*/
 :root {
-  /* 
-    the syntax for variable declaration is simple, just start with double dash "--" as shown below, you
-    since the name is more thtan a word, I seperated them with a dash, you can use camel case as well
-  */
 
   /* main background colour*/
   --Very-dark-blue: hsl(233, 47%, 7%);
@@ -25,109 +14,53 @@
   --main-paragraph: hsla(0, 0%, 100%, 0.75);
   /* stat headings */
   --Stats-headings: hsla(0, 0%, 100%, 0.6);
-
-  /* I think this ain't given in the style guild, but I think this
-  color is perfect for the overlay */
   --overlay: rgba(128, 10, 197, 0.5);
 }
 
-/* let's remove the default padding and margin for every object on
-the page to ensure that all margin and padding are intentional */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Now the journey begins */
 body {
-  /*
-    Use a minimum value of 1.5 for line-height for main paragraph content. This will help people experiencing low vision conditions,
-    as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using a unitless value
-    ensures that the line height will scale proportionately.,
-    --line-height is used to define the minimal height of line boxes within the element. It allows you to set the height of a line
-    independently from the font-size it sets the differences between two lines of your content.It defines the amount of spaces
-    above or below inline elements.
-    --THE DEFAULT IS VALUE IS 1
-    TO LEARN MORE ABOUT THIS >> https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#accessibility_concerns
-  */
   line-height: 1.5;
 
   background: var(--Very-dark-blue);
-  /* 
-    inorder to center the page vertically and horizontally,
-    you should use flexbox. For that you will need to add min-height 100vh to the body to ensure that it's center vertically on all devices
-    min-height is the best option so that will grow bigger when needed(i.e responsive). min-height NOT HEIGHT, using ordinary height, won't 
-    allow responsiveness
-  */
   min-height: 100vh;
   /* then we can now center it with flexbox */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* using rem instead of px is a good idea for responsiveness */
-  /* converting 15px to rem : 15px/16px = 0.9375rem */
   font-size: 0.9375rem;
   font-family: "Lexend Deca",sans-serif;
-  /* let's put some padding here so that all the content of the whole page won't get cut off by the edge of the browser */
   padding: 1rem 0.7rem;
-  /* to ensure that what I built as almost pixel perfect as possible:
-    (since the design we are given for PC is of width 1440px according
-     to the style guild)
-    I always set my browser screen-size to 1440px before comparing the design to know if it's pixel perfect
-    
-  /*since every text is align at the center on the mobile design and we're building mobile first,
-  I'll set the text-align property of my body to center intead of doing it for all individually */
   text-align: center;
 }
 
 .main-container {
-  /* now, here is how you call your variable and auto-completion/auto-suggestion will help you out */
   background: var(--Dark-desaturated-blue);
-  /* let's put some margin so that the card is further away from the edges of the browser, i.e so that it won't be too close to the corner of the browser */
-  /* margin: x-Axis y-Axis; */
   margin: 2rem 0.5rem;
-  /* max-width here is extremely important so that the card(main) won't grow too wide on wide screens like tab in this 
-  case since this is our mobile version and we are not designing for tab and max-width should be placed on the card, not the body*/
   max-width: 23rem;
-  /* to give it round corner */
   border-radius: 0.9rem;
-  /* let's set the overflow to hidden so that the sharp corner of the image won't pop out of the card */
   overflow: hidden;
 }
 
-/* the img */
 .the-img {
-  /* 
-    I don't how to explain these backgroun image in few words, I'll suggest visiting the link below for more explanation
-    for how to add overlay using linear-gradient: https://www.geeksforgeeks.org/css-combine-background-image-with-gradient-overlay/
-    for more on how to use background image: https://www.w3schools.com/cssref/pr_background-image.asp
-    there are also atleast two other methods out there
-  */
   background: linear-gradient(var(--overlay), var(--overlay)),
   url(../images/image-header-mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  /* although all this background... can be done using just a line, but I prefer to show the property name  */
-
-  /* seting the height alone is ok for the mobile version, the width will automatically take up 100% */
   height: 15rem;
 }
 
 .typography {
-  /*adding padding to the overall text container*/
   padding: 1rem;
 }
 
-/* the typography part, haha */
-/* .top-text {
-  
-} */
-
 .top-text h1 {
   color: var(--White);
-  /* padding: x-axis y-axis; */
   padding: 1.5rem 1rem; 
   font-size: 1.8rem;
 }
@@ -148,18 +81,11 @@ body {
 
 li {
   margin: 1.5rem;
-  /* transform the text to uppercase with css*/
   text-transform: uppercase;
-  /*  
-      let's write this as small letter first, then
-      use our CSS to turn it to uppercase so that the screenreaders
-      will read it out as a word and not letter by letter like an abbrevation or something 
-  */
 }
 
 .number {
   color: var(--White);
-  /* setting the font sizes looks like eye/vision test for me, I hope this 1.4rem matches it (lol) */
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0.2rem;
@@ -173,7 +99,6 @@ li {
 /* here comes the footer */
 .attribution {
   margin-bottom: 1.5rem;
-  /* converting the given 11px to rem, 11px/16px = 0.6875rem,  */
   font-size: 0.6875rem;
   text-align: center;
   color: #fff;
@@ -187,56 +112,35 @@ li {
   margin-top: 0.3rem;
 }
 
-/* 
-  :focus-visible 
-  An outline is a line that is drawn just outside the boder edge of the elements. Outlines are generally used to indicate focus or active states
-  of the elements such as buttons, links, form fields, etc.   
-*/
 a:focus-visible {
   outline: 0.1rem dotted #f4f4f4;
 }
 
-
-/* when viewd with my chrome dev tools(using dimensions: responsive), the desktop looks good until about 780px, so I used min-width 785px,
-which means, the minimum screensize for the desktop styling to kick in is 785px  */
 @media (min-width: 785px) {
   
   body {
-    /* let's change the text-align to default which is "start" as in text-align: start; or we can just unset it*/
     text-align: unset;
   }
 
   .main-container {
-    /* the margin is obviously used to make space between the card and edge of the browser esspecial on smaller sceen  */
     margin: 2rem 1rem;
-    /* arranging the image and the typoraphy side by side, as opposed to the vertical position on mobile version */
     display: flex;
     flex-direction: row-reverse;
-    /* giving it a max-width so that it won't too wide on wider screens and it will shrink down when needed(on smaller screens), using width here will cause reponsiveness problem, as it will make
-    make the width fixed(i.e non-reponsive) unlike using max-width. */
     max-width: 90rem;
   }
 
   .the-img {
-    /* let's repeat the same thing as in the mobile background, just changing the image to the desktop background image */
     background: linear-gradient(var(--overlay), var(--overlay)),
     url(../images/image-header-desktop.jpg);
-    /* background-size and background-repeat has been set to cover and no-repeat respectively on the mobile version, so no need to repeat that */
-
-    /* unset here cancells out the previous height we set in our mobile version, just like it's name suggest */
     height: unset;
     min-width: 50%;
   }
 
   .typography {
-    /* adding more space around the texts in general*/
     padding: 2rem;
-    /* I intentionally put this amount of margin to Ensure that the stats/ratings still have a little space between them on small screen of about 
-    769px without additional media query */
   }
 
   .stats {
-    /* making the stats/rating horizontal */
     display: flex;
   }
 
@@ -249,7 +153,6 @@ which means, the minimum screensize for the desktop styling to kick in is 785px 
   }
 
   li {
-    /* adding auto margin to the right of each stat and removing the others */
     margin: 0 auto 0 0;
   }
 
@@ -258,42 +161,3 @@ which means, the minimum screensize for the desktop styling to kick in is 785px 
 }
 
 
-/*************************************************************************************************************************************
-
-DISCLAIMER:
-
-  --some of the things I did(like amount of padding in some places) in this code are due to my personal belive/like
-  like storing those colors in a variable, someone might feel it's not necessary since 
-  this is a small project.
-
-  --some explanation here might look unnecessary but I put it there because I have seen alot of people make those mistakes
-
-  --I'll try as much as possible to update the code with corrections and more suggestions,
-    but I'll advise that you visit the solution page to see the suggestions and hopefully corrections in the comment section
-
-
-
-
-RECOMMENDATIONS:
-    --I'm sorry the font-size and the line-height does not match the design, but I liked it that way because I'm a mini PC user
-
-    --next time try using mobile-first approach, it's makes code shorter and
-    more efficient, also mobile users won't have to process all the desktop styling first.
-
-    --you can skip some explanation if they are things you understand already.
-
-    --some things(like some margins and paddings) are not explained, because I think what they do is simple.
-    But if you don't get it, feel free to google it, experiment with it by changing the values and ask questions
-
-    -If you don't know much about how to test responsiveness, google "how to test responsiveness using chrome developer tool" 
-
-    -Also most of the times you don't need to set height for things like this card to ensure responsiveness and so that your
-    media qery wont look like rocket science(lol). I mean so that it won't be complex.
-
-    -always use rem, em, %, vh and vw for responsiveness, although using vh and vw sometimes might be a bad idea.For example, setting the
-    height or width of the a component on the page should not use vh nor vw, because of ultra small screen and ultra wide screen.
-    this might look good on your computer, but remember there are many computers out there width smaller and bigger screen size and it will
-    look good on few BUT BAD ON MOST. As you can see, I used rem for the max-width of the card
-
-
-****************************************************************************************************************************************/

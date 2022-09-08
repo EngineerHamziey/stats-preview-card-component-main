@@ -1,5 +1,5 @@
 # EngineerHamziey's **EXPLAINED** Solution To Frontend Mentor - Stats preview card component :relieved:.
-:relieved:*Trust me, we are going to have fun and learn at the same time, I'll make this as interesting as possible*:wink: :yum:
+:relieved:*Trust me, we are going to have fun and learn at the same time, I'll make this as interesting and explanatory as possible*:wink: :yum:
 ## Table of contents
   
   - [Acknowledgments](#acknowledgments)
