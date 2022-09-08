@@ -1,38 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Always put the lang attribute, to avoid accessibility issues  -->
 
 <head>
-  <!-- always set your charset to UTF-8 first after the head tag  -->
   <meta charset="UTF-8">
-  <!-- displays site properly based on user's device with initial scale of 1(i.e with no zoom in or out) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="This is Engineer Hamzieys Solution To Frontend Mentor stats preview card component challenge">
   <meta name="Keywords" content="EngineerHamziey, Frontend Web Developer">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./styles/mobile.css">
-  <link rel="stylesheet" media="screen and (min-width: 768px)" href="./styles/desktop.css">
-  <!-- creating meadia queries in a seperate 
-    file: this will use this stylesheet for a device if the width is more than or equal to
-    768px i.e tab or desktop and it should be placed below the main stylesheet -->
-
+  <link rel="stylesheet" href="./styles/style.css">
   <title>EngineerHamziey | Stats preview card component | Frontend Mentor </title>
 </head>
 
 <body>
-  <!-- yh, main is the landmark for the main content and always put your attribution in the footer landmark, header is another landmart
-  remember NOT TO PUT ONE LANDMARK IN THE OTHER -->
   <main class="main-container">
-    <!--
-      I want to add the image as background image to this div.the-img,
-      the img should  come first since we're using mobile-first approach
-    -->
+
     <div class="the-img"></div>
 
-    <!-- I'm putting the text in  this div.typography -->
-    <!-- in general, I grouped the texts in containers so that I can position them together -->
     <div class="typography">
       <div class="top-text">
         <h1>Get <span class="emphasized">insights</span> that help your business grow.</h1>
@@ -42,33 +27,24 @@
           overall efficiency
         </p>
       </div>
-      <!-- 
-        making this a list item is better to make it semantics
-        cuz if you think of this without styling, it's just a list.
-              -10k+ companies
-              -314 templates
-              -12m+ queries
-       -->
+
       <ul class="stats">
+
         <li>
-          <!-- we don't need to use heading here since this ain't a title, it's just a big text
-          we can use the strong tag <strong> or p, then we style it with our CSS -->
           <p class="number">
             10k+
           </p>
+
           <p class="rating">
-            <!--
-              let's write this as small letter first, then
-              use our CSS to turn it to uppercase so that the screenreaders
-              will read it out as a word and not letter by letter like an abbrevation or something
-            -->
             companies
           </p>
         </li>
+
         <li>
           <p class="number">
             314
           </p>
+
           <p class="rating">
             templates
           </p>
@@ -77,27 +53,29 @@
           <p class="number">
             12M+
           </p>
+
           <p class="rating">
             queries
           </p>
         </li>
+
       </ul>
     </div>
 
   </main>
 
-
-  <!-- Always place your attribution in the footer landmark to prevent accessibility issue. -->
   <footer>
     <div class="attribution">
       <p>
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
-          href="https://www.linkedin.com/in/hamzat-lawal-a88404239">Lawal Hamat Ademola</a>. <a
-          href="https://github.com/EngineerHamziey/stats-preview-card-component-main.git">Code Link on github.</a>
-      </p>
-      <p>To see Menthors' feedback on the code,
-        <a href="#">Click here.</a>
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by
+        <a href="https://www.linkedin.com/in/hamzat-lawal-a88404239">
+          Lawal Hamzt Ademola AKA EngineerHamziey
+        </a>.
+        <a href="https://github.com/EngineerHamziey/stats-preview-card-component-main.git">
+          Code Link on github.
+        </a>
       </p>
     </div>
   </footer>
