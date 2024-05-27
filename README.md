@@ -22,7 +22,7 @@ If you find this helpful, kindly follow me on GitHub or and My other social medi
 
 ## Acknowledgments
 :blush:I would like to express my special thanks to @jamesqquick for finally inspiring me to do this(Teach as I learn). 
-Also special Thanks to Vanza Setia, Grace Snow and all other Mentors on [Frontend Mentor](https://www.Frontendmentor.io) for corrections, recommendations and suggestions on my solutions, I love you guys:kissing_closed_eyes:.
+Also special Thanks to Vanza Setia, Grace Snow and all other Mentors on [Frontend Mentor](https://www.Frontendmentor.io) for corrections, recommendations and suggestions on my solutions, I love you guys :kissing_closed_eyes:.
 
 
 
